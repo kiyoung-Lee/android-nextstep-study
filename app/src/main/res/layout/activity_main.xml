@@ -25,4 +25,12 @@
         android:textSize="35dp"
         />
 
+    <TextView
+        android:id="@+id/handler_thread_activity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HandlerThreadActivity"
+        app:layout_constraintTop_toTopOf="@id/center_text"
+        />
+
 </android.support.constraint.ConstraintLayout>

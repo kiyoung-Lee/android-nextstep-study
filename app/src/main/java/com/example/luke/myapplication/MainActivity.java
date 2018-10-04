@@ -1,5 +1,6 @@
 package com.example.luke.myapplication;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,12 +8,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.luke.myapplication.handler.LooperThread;
+import com.example.luke.myapplication.handlerthread.HandlerThreadActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private LooperThread thread;
     private TextView textView;
-    private TextView clickButton;
+    private TextView handlerButton;
+    private TextView moveHandlerTheradActivityButton;
     private int count = 0;
     private static final int DELAY_TIME = 500;
     private Handler handler;
@@ -23,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.center_text);
-        clickButton = findViewById(R.id.click_text_view);
+        handlerButton = findViewById(R.id.click_text_view);
+        moveHandlerTheradActivityButton = findViewById(R.id.handler_thread_activity_text_view);
         handler = new Handler();
 
         thread = new LooperThread(textView);
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setClickEvent(){
-        clickButton.setOnClickListener(new View.OnClickListener() {
+        handlerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                new Handler().post(new Runnable() {
@@ -44,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
 //                });
 
                 handler.post(updateTimeTask);
+            }
+        });
+
+        moveHandlerTheradActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HandlerThreadActivity.class);
+                startActivity(intent);
             }
         });
     }
