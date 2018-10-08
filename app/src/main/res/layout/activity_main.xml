@@ -29,8 +29,17 @@
         android:id="@+id/handler_thread_activity_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HandlerThreadActivity"
+        android:text="HandlerThread"
         app:layout_constraintTop_toTopOf="@id/center_text"
+        />
+
+    <TextView
+        android:id="@+id/async_task_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask"
+        app:layout_constraintTop_toTopOf="@id/center_text"
+        app:layout_constraintRight_toRightOf="parent"
         />
 
 </android.support.constraint.ConstraintLayout>
