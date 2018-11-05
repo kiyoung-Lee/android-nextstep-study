@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.luke.myapplication.activity_result.ActivityA;
 import com.example.luke.myapplication.asynctask.AsyncTaskActivity;
 import com.example.luke.myapplication.handler.LooperThread;
 import com.example.luke.myapplication.handlerthread.HandlerThreadActivity;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView handlerButton;
     private TextView moveHandlerTheradActivityButton;
     private TextView asyncTaskButton;
+    private TextView startActivityForResultButton;
 
     private int count = 0;
     private static final int DELAY_TIME = 500;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         handlerButton = findViewById(R.id.click_text_view);
         moveHandlerTheradActivityButton = findViewById(R.id.handler_thread_activity_text_view);
         asyncTaskButton = findViewById(R.id.async_task_text_view);
+        startActivityForResultButton = findViewById(R.id.start_for_result_text_view);
         handler = new Handler();
 
         thread = new LooperThread(textView);
@@ -68,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), AsyncTaskActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        startActivityForResultButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ActivityA.class));
             }
         });
     }

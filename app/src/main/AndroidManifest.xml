@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".handlerthread.HandlerThreadActivity" />
-        <activity android:name=".asynctask.AsyncTaskActivity"></activity>
+        <activity android:name=".asynctask.AsyncTaskActivity" />
+        <activity android:name=".activity_result.ActivityA" />
+        <activity android:name=".activity_result.ActivityB" />
+        <activity android:name=".activity_result.ActivityC"></activity>
     </application>
 
 </manifest>
