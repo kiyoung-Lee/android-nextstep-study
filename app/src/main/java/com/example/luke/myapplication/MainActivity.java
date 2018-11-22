@@ -11,6 +11,8 @@ import com.example.luke.myapplication.activity_result.ActivityA;
 import com.example.luke.myapplication.asynctask.AsyncTaskActivity;
 import com.example.luke.myapplication.handler.LooperThread;
 import com.example.luke.myapplication.handlerthread.HandlerThreadActivity;
+import com.example.luke.myapplication.service.StartedServiceA;
+import com.example.luke.myapplication.service.StartedServiceActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView moveHandlerTheradActivityButton;
     private TextView asyncTaskButton;
     private TextView startActivityForResultButton;
+    private TextView serviceActivityButton;
 
     private int count = 0;
     private static final int DELAY_TIME = 500;
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         moveHandlerTheradActivityButton = findViewById(R.id.handler_thread_activity_text_view);
         asyncTaskButton = findViewById(R.id.async_task_text_view);
         startActivityForResultButton = findViewById(R.id.start_for_result_text_view);
+        serviceActivityButton = findViewById(R.id.service_activity_text_view);
         handler = new Handler();
 
         thread = new LooperThread(textView);
@@ -78,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ActivityA.class));
+            }
+        });
+
+        serviceActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), StartedServiceActivity.class));
             }
         });
     }

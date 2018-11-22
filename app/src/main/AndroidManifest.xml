@@ -20,7 +20,10 @@
         <activity android:name=".asynctask.AsyncTaskActivity" />
         <activity android:name=".activity_result.ActivityA" />
         <activity android:name=".activity_result.ActivityB" />
-        <activity android:name=".activity_result.ActivityC"></activity>
+        <activity android:name=".activity_result.ActivityC" />
+        <activity android:name=".service.StartedServiceActivity"></activity>
+        <service android:name=".service.StartedServiceA"></service>
+        <service android:name=".service.ResultReceiverService"></service>
     </application>
 
 </manifest>
