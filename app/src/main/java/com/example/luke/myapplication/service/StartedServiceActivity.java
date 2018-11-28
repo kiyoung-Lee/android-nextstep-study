@@ -13,6 +13,7 @@ import com.example.luke.myapplication.R;
 public class StartedServiceActivity extends AppCompatActivity {
 
     private TextView startServiceButton;
+    private TextView startCrashServiceButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,10 @@ public class StartedServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_started_service);
 
         startServiceButton = findViewById(R.id.service_start_text_view);
+        startCrashServiceButton = findViewById(R.id.service_crash_text_view);
 
         Intent intent = new Intent(getApplicationContext(), StartedServiceA.class);
         startService(intent);
-
-
 
         setEvent();
     }
@@ -36,6 +36,14 @@ public class StartedServiceActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplicationContext(), ResultReceiverService.class);
                 intent1.putExtra("Reciever", resultReceiver);
                 startService(intent1);
+            }
+        });
+
+        startCrashServiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CrashServiceActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -21,9 +21,8 @@ public class StartedServiceA extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        System.out.println("Service StartCommand");
         // Default Thread: Main Thread
-
+        System.out.println("Service StartCommand");
 
         return super.onStartCommand(intent, flags, startId);
     }
