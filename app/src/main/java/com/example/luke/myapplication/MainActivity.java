@@ -11,6 +11,7 @@ import com.example.luke.myapplication.activity_result.ActivityA;
 import com.example.luke.myapplication.asynctask.AsyncTaskActivity;
 import com.example.luke.myapplication.handler.LooperThread;
 import com.example.luke.myapplication.handlerthread.HandlerThreadActivity;
+import com.example.luke.myapplication.service.BoundedServiceActivity;
 import com.example.luke.myapplication.service.StartedServiceA;
 import com.example.luke.myapplication.service.StartedServiceActivity;
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView asyncTaskButton;
     private TextView startActivityForResultButton;
     private TextView serviceActivityButton;
+    private TextView remoteBoundedServiceButton;
 
     private int count = 0;
     private static final int DELAY_TIME = 500;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         asyncTaskButton = findViewById(R.id.async_task_text_view);
         startActivityForResultButton = findViewById(R.id.start_for_result_text_view);
         serviceActivityButton = findViewById(R.id.service_activity_text_view);
+        remoteBoundedServiceButton = findViewById(R.id.remove_service_activity_text_view);
         handler = new Handler();
 
         thread = new LooperThread(textView);
@@ -89,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), StartedServiceActivity.class));
+            }
+        });
+
+        remoteBoundedServiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), BoundedServiceActivity.class));
             }
         });
     }

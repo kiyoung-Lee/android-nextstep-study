@@ -25,9 +25,11 @@
 
         <service android:name=".service.StartedServiceA" />
         <service android:name=".service.ResultReceiverService" />
-        <service android:name=".service.CrashService"/>
+        <service android:name=".service.CrashService" />
+        <service android:name=".service.RemoteService"/>
 
-        <activity android:name=".service.CrashServiceActivity"></activity>
+        <activity android:name=".service.CrashServiceActivity" />
+        <activity android:name=".service.BoundedServiceActivity"></activity>
     </application>
 
 </manifest>

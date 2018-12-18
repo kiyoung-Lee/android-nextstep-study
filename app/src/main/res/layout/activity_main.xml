@@ -62,4 +62,14 @@
         android:layout_marginTop="30dp"
         />
 
+    <TextView
+        android:id="@+id/remove_service_activity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remote Bounded Service"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/service_activity_text_view"
+        android:layout_marginTop="30dp"
+        />
+
 </android.support.constraint.ConstraintLayout>
