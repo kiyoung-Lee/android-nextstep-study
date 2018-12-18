@@ -40,6 +40,8 @@ public class BoundedServiceActivity extends AppCompatActivity {
         actionTextView = findViewById(R.id.action_button_text);
 
         Intent intent = new Intent(IRemoteService.class.getName());
+
+        // 롤리팝 이후 패키지명을 명시해줘야한다.
         intent.setPackage("com.example.luke.myapplication.IRemoteService");
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
 
