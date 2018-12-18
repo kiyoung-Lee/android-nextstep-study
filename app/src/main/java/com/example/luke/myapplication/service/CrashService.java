@@ -24,20 +24,6 @@ public class CrashService extends Service {
         System.out.println("I am Crash Service!!!");
         System.out.println("I am Crash Service!!!");
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for(int i = 0 ; i < 10; i++) {
-                    try {
-                        Thread.sleep(1000);
-                        System.out.println("I am Crash Service!!!" + i);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
-
         return START_STICKY;
     }
 }

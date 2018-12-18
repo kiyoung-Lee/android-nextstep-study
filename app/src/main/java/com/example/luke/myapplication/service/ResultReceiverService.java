@@ -27,7 +27,7 @@ public class ResultReceiverService extends Service {
                 receiver.send(1, null);
                 stopSelf();
             }
-        });
+        }).start();
 
         return START_NOT_STICKY;
     }

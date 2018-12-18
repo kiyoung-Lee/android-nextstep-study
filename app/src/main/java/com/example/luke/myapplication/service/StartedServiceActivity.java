@@ -36,6 +36,8 @@ public class StartedServiceActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplicationContext(), ResultReceiverService.class);
                 intent1.putExtra("Reciever", resultReceiver);
                 startService(intent1);
+                startService(intent1);
+                startService(intent1);
             }
         });
 
