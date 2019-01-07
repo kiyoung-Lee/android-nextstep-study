@@ -17,8 +17,8 @@ public class RemoteService extends Service {
 
     private final IRemoteService.Stub binder = new IRemoteService.Stub() {
         @Override
-        public boolean validCalendar(long calendarId, String calendarType) throws RemoteException {
-            return false;
+        public int sum(int a, int b) throws RemoteException {
+            return a + b;
         }
     };
 }

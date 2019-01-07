@@ -11,8 +11,6 @@ import com.example.luke.myapplication.activity_result.ActivityA;
 import com.example.luke.myapplication.asynctask.AsyncTaskActivity;
 import com.example.luke.myapplication.handler.LooperThread;
 import com.example.luke.myapplication.handlerthread.HandlerThreadActivity;
-import com.example.luke.myapplication.service.BoundedServiceActivity;
-import com.example.luke.myapplication.service.StartedServiceA;
 import com.example.luke.myapplication.service.StartedServiceActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -95,12 +93,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        remoteBoundedServiceButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), BoundedServiceActivity.class));
-            }
-        });
     }
 
     private Runnable updateTimeTask = new Runnable() {
