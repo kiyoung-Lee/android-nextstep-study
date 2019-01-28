@@ -63,13 +63,6 @@ public class DataBaseActivity extends AppCompatActivity {
             }
         });
 
-        deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
         readButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,7 +87,26 @@ public class DataBaseActivity extends AppCompatActivity {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean isUpdate = dbHelper.updateData(editId.getText().toString(), editName.getText().toString(),
+                        editSurName.getText().toString(), editMarks.getText().toString());
 
+                if(isUpdate){
+                    Toast.makeText(DataBaseActivity.this,"Update Data Success!", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(DataBaseActivity.this,"Update Data Failure!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int deleteRow = dbHelper.deleteData(editId.getText().toString());
+                if(deleteRow > 0){
+                    Toast.makeText(DataBaseActivity.this,"Delete Data Success!", Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(DataBaseActivity.this,"Delete Data Failure!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
