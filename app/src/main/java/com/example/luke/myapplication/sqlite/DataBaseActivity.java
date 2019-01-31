@@ -44,14 +44,13 @@ public class DataBaseActivity extends AppCompatActivity {
     }
 
     private void setEvent() {
-        final String name = editName.getText().toString();
-        final String surName = editSurName.getText().toString();
-        final String marks = editMarks.getText().toString();
-        String id = editId.getText().toString();
-
         addDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String name = editName.getText().toString();
+                final String surName = editSurName.getText().toString();
+                final String marks = editMarks.getText().toString();
+
                 Boolean result = dbHelper.insertData(name, surName, marks);
 
                 if(result){
