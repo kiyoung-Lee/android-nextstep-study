@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.luke.myapplication.activity_result.ActivityA;
 import com.example.luke.myapplication.asynctask.AsyncTaskActivity;
+import com.example.luke.myapplication.broadcastreciver.BroadCastActivity;
 import com.example.luke.myapplication.handler.LooperThread;
 import com.example.luke.myapplication.handlerthread.HandlerThreadActivity;
 import com.example.luke.myapplication.service.StartedServiceActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView startActivityForResultButton;
     private TextView serviceActivityButton;
     private TextView sqliteButton;
+    private TextView broadCastReciverButton;
 
     private int count = 0;
     private static final int DELAY_TIME = 500;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResultButton = findViewById(R.id.start_for_result_text_view);
         serviceActivityButton = findViewById(R.id.service_activity_text_view);
         sqliteButton = findViewById(R.id.sqlite_text_view);
+        broadCastReciverButton = findViewById(R.id.broadcastreciver_text_view);
         handler = new Handler();
 
         thread = new LooperThread(textView);
@@ -98,6 +101,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), DataBaseActivity.class));
+            }
+        });
+
+        broadCastReciverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), BroadCastActivity.class));
             }
         });
     }
