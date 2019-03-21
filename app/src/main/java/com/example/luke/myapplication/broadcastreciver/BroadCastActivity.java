@@ -22,7 +22,7 @@ public class BroadCastActivity extends AppCompatActivity {
 
         setEvent();
 
-        StaticBroadcastReciver reciver = new StaticBroadcastReciver();
+        SampleBroadcastReciver reciver = new SampleBroadcastReciver();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("test");
         registerReceiver(reciver, intentFilter);
@@ -32,13 +32,13 @@ public class BroadCastActivity extends AppCompatActivity {
         staticBroadCast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendBroadcast(new Intent("test"));
+//                sendBroadcast(new Intent("test"));
+//
+//                Intent intent = new Intent();
+//                intent.setAction("test");
+//                sendBroadcast(intent);
 
-                Intent intent = new Intent();
-                intent.setAction("test");
-                sendBroadcast(intent);
-
-//                sendBroadcast(new Intent("test"), "test.permission");
+                sendBroadcast(new Intent("action.test"), "test.permission");
 
             }
         });

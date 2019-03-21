@@ -37,6 +37,12 @@
         <activity android:name=".service.CrashServiceActivity" />
         <activity android:name=".sqlite.DataBaseActivity" />
         <activity android:name=".broadcastreciver.BroadCastActivity"></activity>
+        
+        <receiver android:name=".broadcastreciver.SampleBroadcastReciver">
+            <intent-filter>
+                <action android:name="action.test"></action>
+            </intent-filter>
+        </receiver>           
 
     </application>
 
